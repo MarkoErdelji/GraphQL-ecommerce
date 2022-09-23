@@ -15,6 +15,10 @@ function getAllProducts(){
     return products;
 }
 
+function getProductById(id){
+    return products.find((product)=>{return product.id==id});
+}
+
 function getProductsByPrice(min,max){
     return products.filter((product) => {
         return product.price >= min && product.price <= max
@@ -23,5 +27,6 @@ function getProductsByPrice(min,max){
 
 module.exports = {
     getAllProducts,
-    getProductsByPrice
+    getProductsByPrice,
+    getProductById
 }
