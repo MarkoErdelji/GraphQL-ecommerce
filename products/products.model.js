@@ -39,9 +39,23 @@ function getProductsByPrice(min,max){
     })
 }
 
+function addNewProductReview(id,rating,comment){
+    const newReview = {
+        rating: rating,
+        comment: comment
+    }
+    const product = getProductById(id);
+    if(product){
+        product.reviews.push(newReview)
+        return product
+    }
+
+}
+
 module.exports = {
     getAllProducts,
     getProductsByPrice,
     getProductById,
-    addNewProduct
+    addNewProduct,
+    addNewProductReview
 }
